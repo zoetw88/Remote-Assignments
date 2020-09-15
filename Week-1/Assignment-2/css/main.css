@@ -1,0 +1,164 @@
+* {
+	box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p1{
+    font-family:sans-serif;
+    font-size:6em;
+    color: black
+    background-color:rgba(255,255,255,0.2);
+    background:url('../img/earth.jpg') no-repeat center;
+    background-size: 100px;
+    
+}
+
+h2{
+    font-family:sans-serif;
+    font-size:5em;
+    color:lightyellow;
+}
+
+h3{
+    font-family:sans-serif;
+    font-size:3em;
+    color:snow;
+}
+   
+
+.main-header {
+	padding-top: .5em;
+	padding-bottom: .5em;
+}
+
+.banner {
+  
+	padding: 4em 1em;
+	margin-bottom: 55px;
+    overflow: hidden;
+    background:url(../img/city.jpg);
+    background-repeat: no-repeat;
+    background-position:bottom;
+    border-radius:100% 50%;
+}
+
+h4{
+    text-align: center;
+    margin: auto;
+    font-size:3em;
+}
+
+.col {
+	padding-right: 1em;
+	padding-left: 1em;
+    width: 80px;
+   
+}
+
+.main-footer{
+    text-align: center;
+}
+
+------------------------------------------------
+.row{
+    
+    padding:5em 1em;
+    align-items: center;
+    margin-bottom: 48px;
+    
+}
+.row-2{
+ 
+    padding:5em 1em;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+
+.primary{
+    background:url(../img/food.jpg);
+}
+
+.secondary{
+    background:url(../img/hiking.JPG);
+}
+
+.third{
+    background:url(../img/night.jpg);
+}
+
+.fourth{
+    background:url(../img/hotspring.jpg);
+}
+
+.kol{
+    background-repeat: no-repeat;
+    text-align: center;
+    background-position: center;
+    margin: 40px;
+  
+}
+
+
+/*------------------------layout-------------------------------------------*/
+
+.main-header{
+    display: flex;flex-direction:row; 
+    justify-content: space-between
+}
+.main-nav{
+    display:flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.banner{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+.row,
+.row-2{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
+    padding: 20px;
+   
+}
+
+.kol{
+    flex:1 50%;
+}
+/*---------------------querymedia------------------------*/
+@media(max-width:768px){
+    .row,
+    .row-2{
+       display:flex;
+       flex-direction: row;
+       align-items:center;
+       justify-content: center;
+       padding: 20px;
+       flex-wrap: wrap;
+    }
+    p1{
+        font-size: 3em;
+    }
+}
+
+@media(min-width:1200px){
+    .row,
+    .row-2{
+        width: 1240px;
+        margin: 0px auto;
+        
+    }
+    
+
+}
