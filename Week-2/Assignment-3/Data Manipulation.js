@@ -55,7 +55,6 @@ for (var x = 0; x<input.length;x++){
       table.push(b,d);
     }
     }
-
     return table;
   }
 let input2 = [
