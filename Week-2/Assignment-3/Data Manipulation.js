@@ -1,8 +1,10 @@
-var list=[];
+var list={
+};
 function count(input) {
 var c;
 var d=0;
 var z=false;
+var name;
 for(var x=0;x<input.length;x++){
   var number=0;
   for(let y=0;y<input.length;y++){
@@ -11,28 +13,29 @@ for(var x=0;x<input.length;x++){
       }
   }
   c=input[x];
-  for (var i=0;i<input.length;i++){
+  for (var i=0;i<input.length;i+=2){
     if (list[i]==input[x]){
        z=true;
        break;
     } else{
       z=false;
+     
     }
   }
-  if (z===false){list.push(c,number);
+  name= input [x];
+  if (z===false){list[name]=number;
   }
 }
 return list;
 }
 let input1 = ['a', 'b', 'c', 'a', 'c', 'a', 'x'];
 console.log(count(input1));
-
 //----------------------------------------------------------------------------
-var table=[];
+var table={};
 var a;
 var b;
 var t;
-var d;
+var d;var name;
 function groupByKey(input) {
 for (var x = 0; x<input.length;x++){
   d=0;
@@ -43,16 +46,16 @@ for (var x = 0; x<input.length;x++){
             d=a+d;
       }
     }
-    for (var i=0;i<input.length;i++){
+    for (var i=0;i<input.length;i+=2){
       if (table[i]==b){
          t=true;
          break;
       } else{
         t=false;
       }
-    }
-    if (t===false){
-      table.push(b,d);
+    } 
+    if (t===false){table[b]=a;
+      
     }
     }
     return table;
@@ -64,4 +67,4 @@ let input2 = [
 {key: 'a', value: 3},
 {key: 'c', value: 5}
 ]
-console.log(groupByKey(input2));
+console.log(groupByKey(input2))
