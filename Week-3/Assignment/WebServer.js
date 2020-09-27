@@ -8,8 +8,9 @@ var nameRouter = require('./routes/trackName');
 
 const app = express();
 app.use('/getData', getDataRouter);
-app.use('/myName', usersRouter);
 app.use('/trackName', nameRouter);
+app.use('/myName', usersRouter);
+
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser());
 app.use(express.static('public'))

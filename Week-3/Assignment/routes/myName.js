@@ -9,18 +9,20 @@ router.use(cookieParser());
 router.use(express.static('public'))
 
 router.get('/', (req,res)=> {
-  if(req.cookies.username){
-  res.render('name',{name:req.cookies.username});
  
-  }else{
-    res.redirect('/trackName');
-  }
-});
-
-router.post('/', (req,res)=> {
-  res.cookie('username',req.body.username);
-  res.render('name',{name:req.body.username});
+if (!req.cookies.username){
+  console.log(req.cookies.value);
+  res.render('trackname');
   
+}
+
+else {
+    res.render('name',{name:req.cookies.username});
+  
+  }
+
+  
+
 });
 
 module.exports = router;
