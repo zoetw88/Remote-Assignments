@@ -8,14 +8,16 @@ router.use(cookieParser());
 router.use(express.static('public'))
 
 
-router.get('/',(req,res)=>{
-      res.render('trackname');    
-      var{username}=req.query;
-      list.push(toString(username));
-      console.log(list);
-  });
   
 
+  router.post('/', (req,res)=> {
+    res.cookie('username',req.body.username);
+    res.redirect('/myName');
+  });
   
+  
+router.get('/',(req,res)=>{
+    res.render('trackname');    
+});
 
 module.exports = router;
