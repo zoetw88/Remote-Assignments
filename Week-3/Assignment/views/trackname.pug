@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1=" Need Your Name" 
+  
+   form(action='/myName',method='post')
+    label 請輸入你的名字:
+     input(type='text', name='username')
+     button(type='submit') Check

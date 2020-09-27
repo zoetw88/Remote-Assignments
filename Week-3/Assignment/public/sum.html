@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Number Game With Ajax</title>
+  
+  <button id="input" onclick="start()">Play</button>
+  <input id="number" placeholder="輸入整數">
+  <p id="result">準備中</p>
+  
+  <script>
+    function start(){
+      var xhr = new XMLHttpRequest();
+        xhr.open("GET",'http://localhost:3000/getData?number='+document.getElementById("number").value);
+        xhr.send();
+        xhr.onreadystatechange =function(){
+        if (xhr.readyState === 4) {
+            if (xhr.status >= 200 && xhr.status< 400) {
+                var result = xhr.responseText;
+                document.getElementById("result").innerHTML =  result ;
+             }
+             else{
+                document.getElementById("result").innerHTML = 'Bad Internet!' 
+             }
+            }
+        }
+} 
+  </script>
+</head>
+<body>
+
+          
+       
+
+</body>
+</html>
