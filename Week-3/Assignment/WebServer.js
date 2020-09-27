@@ -7,12 +7,13 @@ var nameRouter = require('./routes/trackName');
 
 
 const app = express();
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(cookieParser());
 app.use('/getData', getDataRouter);
 app.use('/trackName', nameRouter);
 app.use('/myName', usersRouter);
 
-app.use(bodyParser.urlencoded({extended:false}));
-app.use(cookieParser());
+
 app.use(express.static('public'))
 
 app.set('view engine','pug');

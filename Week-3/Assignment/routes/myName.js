@@ -1,11 +1,15 @@
 var express = require('express');
-var router = express.Router();
 var bodyParser= require('body-parser');
 var cookieParser = require('cookie-parser');
-
-var list={};
+var router = express.Router();
 router.use(bodyParser.urlencoded({extended:false}));
 router.use(cookieParser());
+router.use(express.static('public'))
+
+
+
+
+
 router.use(express.static('public'))
 
 router.get('/', (req,res)=> {
