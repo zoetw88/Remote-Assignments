@@ -1,7 +1,7 @@
 function delayedResult(n1, n2, delayTime, callback) {
          let sum =n1+n2;
-         var callback =function (){ console.log(` ${sum} "("${n1}"+"${n2}")"`)};
-         setTimeout(callback,delayTime);
+      
+         setTimeout(()=>{callback(sum)},delayTime);
          };
 
     delayedResult(4, 5, 3000, function(result) {
