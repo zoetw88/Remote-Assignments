@@ -39,7 +39,7 @@ app.get('/createdb',(req,res)=> {
 app.get('/createtable',(req,res)=>{
     let sql = 'CREATE TABLE user(ID int AUTO_INCREMENT, email VARCHAR(255), password VARCHAR(255), PRIMARY KEY (ID))';
     db.query(sql, (err, result)=>{
-        if(err)throw errㄤ
+        if(err)throw err;
         console.log(result);
         res.send('User Table created!');
     })
@@ -54,9 +54,7 @@ if (req.query.hemail && req.query.hpass){
                 res.render('member',{name: req.query.hemail,result:'登入成功'});
             }
          else{
-              
                res.render('index',{mistake:'重新註冊'});
-               
         }
     })
 }
