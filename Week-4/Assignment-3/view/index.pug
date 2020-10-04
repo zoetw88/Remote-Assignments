@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+ 
+ 
+ if mistake
+  p #{mistake}
+
+      
+<p>  註冊 </p>
+     form(action='/member', method='get')   
+      input(type='text', name='email',placeholder="請輸入想要的帳號") 
+      
+      input(type='text', name='pass',placeholder="請輸入想要的密碼")
+                
+      button(type='submit') 確定
+      
+ 
+<p> 登入 </p>
+    
+  
+   form(action='/member', method='get')
+   
+      input(type='text', name='hemail',placeholder="請輸入帳號" ) 
+    
+      input(type='text', name='hpass',placeholder="請輸入密碼") 
+
+      button(type='submit') 確定
