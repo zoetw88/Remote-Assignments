@@ -17,16 +17,12 @@ function ajax(src, callback){
     };
   
 function render(data){  
-
-    console.log(data);
     var currentDiv = document.createElement("div");
     data.forEach(function(seperate){
         var newDiv = document.createElement("div"); 
         newDiv.innerHTML='&bigstar;&Tab;'+seperate["name"]+'&Tab;'+'&dollar;&Tab;'+ seperate["price"] +'&Tab;' + '&Tab;&lpar;'+seperate["description"]+'&rpar;&Tab;'
         currentDiv.appendChild(newDiv);
-
     });
-
     var Div = document.querySelector('#start'); 
     Div.appendChild(currentDiv);
 };
